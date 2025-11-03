@@ -201,6 +201,154 @@ LIMIT 5
 
 3. Tableau and Power BI show strong demand for data visualization expertise.
 
+### 4. Top Paying Skills
+
+This reveals how different skills impact salary levels for Data Analysts and helps identify the most financially rewarding skills to acquire or improve.
+
+```sql
+SELECT
+  skills,
+  ROUND(AVG(salary_year_avg),0) AS avg_salary
+FROM job_postings_fact
+INNER JOIN skills_job_dim
+ON skills_job_dim.job_id = job_postings_fact.job_id
+INNER JOIN skills_dim
+ON skills_job_dim.skill_id = skills_dim.skill_id
+WHERE
+  job_title_short = 'Data Analyst'
+  AND salary_year_avg IS NOT NULL
+  AND job_work_from_home = True
+GROUP BY skills
+ORDER BY avg_salary DESC
+LIMIT 25
+```
+
+| **Skill**     | **Average Salary ($/year)** |
+| ------------- | --------------------------: |
+| PySpark       |                     208,172 |
+| Bitbucket     |                     189,155 |
+| Couchbase     |                     160,515 |
+| Watson        |                     160,515 |
+| DataRobot     |                     155,486 |
+| GitLab        |                     154,500 |
+| Swift         |                     153,750 |
+| Jupyter       |                     152,777 |
+| Pandas        |                     151,821 |
+| Elasticsearch |                     145,000 |
+| GoLang        |                     145,000 |
+| NumPy         |                     143,513 |
+| Databricks    |                     141,907 |
+| Linux         |                     136,508 |
+| Kubernetes    |                     132,500 |
+| Atlassian     |                     131,162 |
+| Twilio        |                     127,000 |
+| Airflow       |                     126,103 |
+| Scikit-learn  |                     125,781 |
+| Jenkins       |                     125,436 |
+| Notion        |                     125,000 |
+| Scala         |                     124,903 |
+| PostgreSQL    |                     123,879 |
+| GCP           |                     122,500 |
+| MicroStrategy |                     121,619 |
+
+**_📈 Quick Insight:_**
+
+- Data Engineering & Cloud Tools Dominate: High-paying skills like PySpark, Databricks, Airflow, and GCP show strong demand for analysts who can manage large-scale, cloud-based data systems.
+
+- AI/ML & Python Ecosystem Pay Premiums: Tools such as Watson, DataRobot, Pandas, and Scikit-learn boost salaries as analytics shifts toward machine learning and automation.
+
+- DevOps & Collaboration Integration: Skills in Bitbucket, GitLab, Jenkins, and Notion highlight rising value for analysts who can version, automate, and integrate workflows across teams.
+
+### 5. Optimal Skills
+
+Targets skills that offer job security (high demand) and financial benefits (high salaries), offering strategic insights for career development in data analysis.
+
+```sql
+WITH skills_demand AS
+(
+  SELECT
+    skills_dim.skill_id,
+    skills_dim.skills,
+    COUNT(skills_job_dim.job_id) AS demand_count
+  FROM job_postings_fact
+  INNER JOIN skills_job_dim
+  ON skills_job_dim.job_id = job_postings_fact.job_id
+  INNER JOIN skills_dim
+  ON skills_job_dim.skill_id = skills_dim.skill_id
+  WHERE job_title_short = 'Data Analyst' AND job_work_from_home = True
+  AND salary_year_avg IS NOT NULL
+  GROUP BY skills_dim.skill_id
+), average_salary AS
+(
+  SELECT
+    skills_job_dim.skill_id,
+    ROUND(AVG(salary_year_avg),0) AS avg_salary
+  FROM job_postings_fact
+  INNER JOIN skills_job_dim
+  ON skills_job_dim.job_id = job_postings_fact.job_id
+  INNER JOIN skills_dim
+  ON skills_job_dim.skill_id = skills_dim.skill_id
+  WHERE
+    job_title_short = 'Data Analyst'
+    AND salary_year_avg IS NOT NULL
+    AND job_work_from_home = True
+  GROUP BY skills_job_dim.skill_id
+)
+
+SELECT
+  skills_demand.skill_id,
+  skills_demand.skills,
+  demand_count,
+  avg_salary
+FROM
+  skills_demand
+INNER JOIN average_salary
+ON skills_demand.skill_id = average_salary.skill_id
+WHERE demand_count > 10
+ORDER BY avg_salary DESC, demand_count DESC
+LIMIT 25;
+```
+
+| **Skill ID** | **Skill**  | **Demand Count** | **Avg Salary ($/yr)** |
+| ------------ | ---------- | ---------------: | --------------------: |
+| 8            | Go         |               27 |               115,320 |
+| 234          | Confluence |               11 |               114,210 |
+| 97           | Hadoop     |               22 |               113,193 |
+| 80           | Snowflake  |               37 |               112,948 |
+| 74           | Azure      |               34 |               111,225 |
+| 77           | BigQuery   |               13 |               109,654 |
+| 76           | AWS        |               32 |               108,317 |
+| 4            | Java       |               17 |               106,906 |
+| 194          | SSIS       |               12 |               106,683 |
+| 233          | Jira       |               20 |               104,918 |
+| 79           | Oracle     |               37 |               104,534 |
+| 185          | Looker     |               49 |               103,795 |
+| 2            | NoSQL      |               13 |               101,414 |
+| 1            | Python     |              236 |               101,397 |
+| 5            | R          |              148 |               100,499 |
+| 78           | Redshift   |               16 |                99,936 |
+| 187          | Qlik       |               13 |                99,631 |
+| 182          | Tableau    |              230 |                99,288 |
+| 197          | SSRS       |               14 |                99,171 |
+| 92           | Spark      |               13 |                99,077 |
+| 13           | C++        |               11 |                98,958 |
+| 186          | SAS        |               63 |                98,902 |
+| 7            | SAS        |               63 |                98,902 |
+| 61           | SQL Server |               35 |                97,786 |
+| 9            | JavaScript |               20 |                97,587 |
+
+### 📊 Quick Insights:
+
+- Go tops the list with the highest average salary at $115K, despite moderate demand.
+
+- Python and Tableau have very high demand counts, showing strong market need even if the salaries are mid-range.
+
+- Cloud & data tools like Snowflake, Azure, and AWS continue to pay well above average.
+
+---
+
+<br><br>
+
 # What I Learned
 
 Through this adventure, I've turbocharged my SQL toolkit with some serious firepower:

@@ -71,3 +71,13 @@ ORDER BY
   avg_salary DESC,
   demand_count DESC
 LIMIT 25;
+
+/*
+📊 Quick Insights:
+
+Go tops the list with the highest average salary at $115K, despite moderate demand.
+
+Python and Tableau have very high demand counts, showing strong market need even if the salaries are mid-range.
+
+Cloud & data tools like Snowflake, Azure, and AWS continue to pay well above average.
+*/
