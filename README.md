@@ -56,29 +56,29 @@ LIMIT 10;
 
 Here's the breakdown of the top data analyst jobs in 2023:
 
-1. Salary Trends
+- **_Salary Trends_**
 
 Highest salary: ₱650,000 (Data Analyst at Mantys) — seems like an outlier.
 
 Average of the rest ranges ₱184,000 – ₱336,500, indicating director or principal roles earn ~2–3× regular data analyst roles.
 
-2. Job Levels & Titles
+- **_Job Levels & Titles_**
 
 Roles vary from Data Analyst → Principal → Director → Associate Director, showing clear hierarchy.
 
 Higher titles correspond strongly to higher salaries (e.g., Director of Analytics at Meta: ₱336,500).
 
-3. Location & Flexibility
+- **_Location & Flexibility_**
 
 All roles are remote (“Anywhere”), with a few explicitly noting hybrid options.
 
 Flexibility is a consistent factor for top-paying data roles in 2023.
 
-4. Posting Date Insights
+- **_Posting Date Insights_**
 
 Jobs are spread throughout 2023; some of the highest paying (Mantys, Meta) were posted early in the year, suggesting companies budget big for remote talent proactively.
 
-5. Company Patterns
+- **_Company Patterns_**
 
 Tech & data-driven firms dominate: Meta, Pinterest, SmartAsset, AT&T.
 
