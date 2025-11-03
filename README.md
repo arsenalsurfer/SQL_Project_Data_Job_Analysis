@@ -111,6 +111,36 @@ To identify the top-paying skills for a data analyst job, it provides a detailed
 
 - Azure and other cloud or DevOps-related tools (e.g., Bitbucket, GitLab) appear, indicating that data analysts are moving toward cloud-integrated, collaborative workflows.
 
+```sql
+WITH top_paying_jobs AS
+(
+SELECT
+  job_id,
+  job_title,
+  salary_year_avg,
+  name AS company_name
+FROM
+  job_postings_fact
+LEFT JOIN
+  company_dim
+ON job_postings_fact.company_id = company_dim.company_id
+WHERE
+  job_title_short = 'Data Analyst' AND salary_year_avg IS NOT NULL AND job_location = 'Anywhere'
+ORDER BY salary_year_avg DESC
+LIMIT 10
+)
+
+SELECT
+  top_paying_jobs.*,
+  skills
+FROM top_paying_jobs
+INNER JOIN skills_job_dim
+ON skills_job_dim.job_id = top_paying_jobs.job_id
+INNER JOIN skills_dim
+ON skills_job_dim.skill_id = skills_dim.skill_id
+ORDER BY salary_year_avg DESC;
+```
+
 | **Job ID** | **Job Title**                                   | **Company**                             | **Avg Salary ($/yr)** | **Skills**                                                                                                          |
 | ---------- | ----------------------------------------------- | --------------------------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------- |
 | 552322     | Associate Director – Data Insights              | AT&T                                    | 255,829.5             | SQL, Python, R, Azure, Databricks, AWS, Pandas, PySpark, Jupyter, Excel, Tableau, Power BI, PowerPoint              |
@@ -126,25 +156,50 @@ To identify the top-paying skills for a data analyst job, it provides a detailed
 
 Retrieves the top 5 skills with the highest demand in the job market, providing insights into the most valuable skills for job seekers.
 
-***Here’s a short summary of your top-demanded data skills:***
+**_Here’s a short summary of your top-demanded data skills:_**
 
+- **SQL (7,291)** – Still the core data skill; essential for querying and managing databases. Nearly every analytics or BI role lists it as a must-have.
 
-SQL (7,291) – Still the core data skill; essential for querying and managing databases. Nearly every analytics or BI role lists it as a must-have.
+- **Excel (4,611)** – Widely used for quick analysis, reporting, and dashboards; still dominant in business settings despite newer tools.
 
+- **Python (4,330)** – Rising fast for automation, data cleaning, and analytics; adds flexibility beyond spreadsheets and SQL.
 
-Excel (4,611) – Widely used for quick analysis, reporting, and dashboards; still dominant in business settings despite newer tools.
+- **Tableau (3,745)** – Key visualization tool for turning data into insights; valued for storytelling and dashboards.
 
+- **Power BI (2,609)** – Microsoft’s BI tool, strong demand in enterprise environments; often paired with Excel and SQL.
 
-Python (4,330) – Rising fast for automation, data cleaning, and analytics; adds flexibility beyond spreadsheets and SQL.
+- **Trend:** SQL + Excel remain foundational, Python adds versatility, and Tableau/Power BI show strong demand for data visualization and business intelligence.
 
+```sql
+SELECT
+  skills,
+  COUNT(skills_job_dim.job_id) AS demand_count
+FROM job_postings_fact
+INNER JOIN skills_job_dim
+ON skills_job_dim.job_id = job_postings_fact.job_id
+INNER JOIN skills_dim
+ON skills_job_dim.skill_id = skills_dim.skill_id
+WHERE job_title_short = 'Data Analyst' AND job_work_from_home = True
+GROUP BY skills
+ORDER BY demand_count DESC
+LIMIT 5
+```
 
-Tableau (3,745) – Key visualization tool for turning data into insights; valued for storytelling and dashboards.
+| **Skill** | **Demand Count** |
+| --------- | ---------------: |
+| SQL       |            7,291 |
+| Excel     |            4,611 |
+| Python    |            4,330 |
+| Tableau   |            3,745 |
+| Power BI  |            2,609 |
 
+**_📊 Quick insight:_**
 
-Power BI (2,609) – Microsoft’s BI tool, strong demand in enterprise environments; often paired with Excel and SQL.
+1. SQL is the most in-demand skill.
 
+2. Excel and Python follow closely.
 
-Trend: SQL + Excel remain foundational, Python adds versatility, and Tableau/Power BI show strong demand for data visualization and business intelligence.
+3. Tableau and Power BI show strong demand for data visualization expertise.
 
 # What I Learned
 
