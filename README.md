@@ -11,7 +11,7 @@ Driven by a guest to navigate the data analyst job market more effectively, this
 ### The questions I wanted to anser through my SQL queries were:
 
 1. What are the top-paying data analyst jobs?
-2. WHat skills are required for these top-paying jobs?
+2. What skills are required for these top-paying jobs?
 3. What skills are most in demand for data analysts?
 4. Which skills are associated with higher salaries?
 5. What are the most optimal skills to learn?
@@ -21,7 +21,7 @@ Driven by a guest to navigate the data analyst job market more effectively, this
 For mt deep dive into the data analyst job market, I harnessed the power of several key tools:
 
 - **SQL**: The backbone of my analysis, allowing me to query the database and unearth critical insights.
-- **PostgresSQL**: The chosen database management system, ideal for handling the job posting data.
+- **PostgreSQL**: The chosen database management system, ideal for handling the job posting data.
 - **Visual Studio Code**: My go-to for database management and executing SQL queries.
 - **Git & Github**: Essential for version control and sharing my SQL scripts and analysis, ensuring collaboration and project tracking.
 
@@ -64,7 +64,7 @@ Average of the rest ranges ₱184,000 – ₱336,500, indicating director or pri
 
 - **_Job Levels & Titles_**
 
-Roles vary from Data Analyst → Principal → Director → Associate Director, showing clear hierarchy.
+Roles vary from Data Analyst → Principal → Director → Associate Director, showing a clear hierarchy.
 
 Higher titles correspond strongly to higher salaries (e.g., Director of Analytics at Meta: ₱336,500).
 
@@ -76,7 +76,7 @@ Flexibility is a consistent factor for top-paying data roles in 2023.
 
 - **_Posting Date Insights_**
 
-Jobs are spread throughout 2023; some of the highest paying (Mantys, Meta) were posted early in the year, suggesting companies budget big for remote talent proactively.
+Jobs are spread throughout 2023; some of the highest-paying (Mantys, Meta) were posted early in the year, suggesting companies budget big for remote talent proactively.
 
 - **_Company Patterns_**
 
@@ -99,9 +99,9 @@ Companies offering strategic data roles (director/principal) pay more than opera
 
 ### 2. Top Paying Job Skills
 
-To identify the top paying skills for a data analyst job, It provides a detailed look at which skills to develop that align with top salaries.
+To identify the top-paying skills for a data analyst job, it provides a detailed look at which skills to develop that align with top salaries.
 
-**Here's the breakdown of the most demanded skills for data analysts in 2023, based in job postings:**
+**Here's the breakdown of the most demanded skills for data analysts in 2023, based on job postings:**
 
 - SQL, Python, and Tableau stand out as the core trio of high-paying data analyst roles.
 
@@ -122,6 +122,30 @@ To identify the top paying skills for a data analyst job, It provides a detailed
 | 1749593    | Principal Data Analyst                          | SmartAsset                              | 186,000.0             | SQL, Python, Go, Snowflake, Pandas, NumPy, Excel, Tableau, GitLab                                                   |
 | 387860     | ERM Data Analyst                                | Get It Recruit – Information Technology | 184,000.0             | SQL, Python, R                                                                                                      |
 
+### 3. Top Demanded Skills
+
+Retrieves the top 5 skills with the highest demand in the job market, providing insights into the most valuable skills for job seekers.
+
+***Here’s a short summary of your top-demanded data skills:***
+
+
+SQL (7,291) – Still the core data skill; essential for querying and managing databases. Nearly every analytics or BI role lists it as a must-have.
+
+
+Excel (4,611) – Widely used for quick analysis, reporting, and dashboards; still dominant in business settings despite newer tools.
+
+
+Python (4,330) – Rising fast for automation, data cleaning, and analytics; adds flexibility beyond spreadsheets and SQL.
+
+
+Tableau (3,745) – Key visualization tool for turning data into insights; valued for storytelling and dashboards.
+
+
+Power BI (2,609) – Microsoft’s BI tool, strong demand in enterprise environments; often paired with Excel and SQL.
+
+
+Trend: SQL + Excel remain foundational, Python adds versatility, and Tableau/Power BI show strong demand for data visualization and business intelligence.
+
 # What I Learned
 
 Through this adventure, I've turbocharged my SQL toolkit with some serious firepower:
@@ -134,11 +158,11 @@ Through this adventure, I've turbocharged my SQL toolkit with some serious firep
 
 ### Insights
 
-1. **Top-Paying Data Anallyst Jobs**: The highest-paying jobs for data analysts that allow remote work offer a wide range of salaries, the highest at $650,000.
-2. **Skills ofr Top-Paying Jobs:** High-paying data analyst jobs require advanced proficiency in SQL, suggesting it's a critical skill for earning a top salary.
+1. **Top-Paying Data Analyst Jobs**: The highest-paying jobs for data analysts that allow remote work offer a wide range of salaries, with the highest at $650,000.
+2. **Skills of Top-Paying Jobs:** High-paying data analyst jobs require advanced proficiency in SQL, suggesting it's a critical skill for earning a top salary.
 3. **Most In-Demand Skills:** SQL is also the most demanded skill in the data analyst job market, thus making it essential for job seekers.
-4. **Skills with Higher Salaries:** Specialized skills, such as SVN and Solidity, are associated with the highest average salaries, inidcating a premium on niche expertise.
-5. **Optimal Skills for Job Market Value:** SQL leads in demand and offers for a high average salary, positioning it as one of the most optimal skills for data analysts to learn to maximize their market value.
+4. **Skills with Higher Salaries:** Specialized skills, such as SVN and Solidity, are associated with the highest average salaries, indicating a premium on niche expertise.
+5. **Optimal Skills for Job Market Value:** SQL leads in demand and offers a high average salary, positioning it as one of the most optimal skills for data analysts to learn to maximize their market value.
 
 ### Closing Thoughts
 
