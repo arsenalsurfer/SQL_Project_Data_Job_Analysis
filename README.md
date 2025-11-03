@@ -97,6 +97,31 @@ Companies offering strategic data roles (director/principal) pay more than opera
 | 1749593 | Principal Data Analyst                          | Anywhere | Full-time     | 186,000        | 2023-07-11 16:00:05 | SmartAsset                              |
 | 387860  | ERM Data Analyst                                | Anywhere | Full-time     | 184,000        | 2023-06-09 08:01:04 | Get It Recruit - Information Technology |
 
+### 2. Top Paying Job Skills
+
+To identify the top paying skills for a data analyst job, It provides a detailed look at which skills to develop that align with top salaries.
+
+**Here's the breakdown of the most demanded skills for data analysts in 2023, based in job postings:**
+
+- SQL, Python, and Tableau stand out as the core trio of high-paying data analyst roles.
+
+- R, Snowflake, and Pandas follow closely — showing the value of statistical analysis and modern data stack skills.
+
+- Excel still holds relevance, proving traditional tools remain important.
+
+- Azure and other cloud or DevOps-related tools (e.g., Bitbucket, GitLab) appear, indicating that data analysts are moving toward cloud-integrated, collaborative workflows.
+
+| **Job ID** | **Job Title**                                   | **Company**                             | **Avg Salary ($/yr)** | **Skills**                                                                                                          |
+| ---------- | ----------------------------------------------- | --------------------------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| 552322     | Associate Director – Data Insights              | AT&T                                    | 255,829.5             | SQL, Python, R, Azure, Databricks, AWS, Pandas, PySpark, Jupyter, Excel, Tableau, Power BI, PowerPoint              |
+| 99305      | Data Analyst, Marketing                         | Pinterest Job Advertisements            | 232,423.0             | SQL, Python, R, Hadoop, Tableau                                                                                     |
+| 1021647    | Data Analyst (Hybrid/Remote)                    | UCLA Healthcareers                      | 217,000.0             | SQL, Crystal, Oracle, Tableau, Flow                                                                                 |
+| 168310     | Principal Data Analyst (Remote)                 | SmartAsset                              | 205,000.0             | SQL, Python, Go, Snowflake, Pandas, NumPy, Excel, Tableau, GitLab                                                   |
+| 731368     | Director, Data Analyst – HYBRID                 | Inclusively                             | 189,309.0             | SQL, Python, Azure, AWS, Oracle, Snowflake, Tableau, Power BI, SAP, Jenkins, Bitbucket, Atlassian, Jira, Confluence |
+| 310660     | Principal Data Analyst, AV Performance Analysis | Motional                                | 189,000.0             | SQL, Python, R, Git, Bitbucket, Atlassian, Jira, Confluence                                                         |
+| 1749593    | Principal Data Analyst                          | SmartAsset                              | 186,000.0             | SQL, Python, Go, Snowflake, Pandas, NumPy, Excel, Tableau, GitLab                                                   |
+| 387860     | ERM Data Analyst                                | Get It Recruit – Information Technology | 184,000.0             | SQL, Python, R                                                                                                      |
+
 # What I Learned
 
 # Conclusions
